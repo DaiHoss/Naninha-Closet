@@ -1,0 +1,182 @@
+/* =========================================================
+   FORMAS DE PAGAMENTO
+   - Seção da página (cards Pix / Crédito / Débito)
+   - Escolha da forma de pagamento dentro da sacola
+   ========================================================= */
+
+/* ---------- Seção da página ---------- */
+.pagamento {
+  padding: 90px 0;
+  background: var(--textura), var(--cor-fundo-alt);
+}
+
+.formas-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.forma-card {
+  position: relative;
+  padding: 40px 28px;
+  text-align: center;
+  background: var(--cor-superficie);
+  border-radius: var(--raio);
+  overflow: hidden;
+  transition: transform 0.35s, box-shadow 0.35s;
+}
+
+/* linha dourada que cresce ao passar o mouse */
+.forma-card::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: var(--cor-dourado);
+  transform: translateX(-50%);
+  transition: width 0.4s;
+}
+
+.forma-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra);
+}
+
+.forma-card:hover::after {
+  width: 100%;
+}
+
+.forma-icone {
+  display: inline-grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--cor-dourado-claro);
+  color: var(--cor-dourado);
+  transition: background 0.35s, color 0.35s, transform 0.5s;
+}
+
+.forma-icone svg {
+  width: 36px;
+  height: 36px;
+}
+
+.forma-card:hover .forma-icone {
+  background: var(--cor-dourado);
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.forma-card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 8px;
+}
+
+.forma-card p {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+.pagamento-nota {
+  max-width: 620px;
+  margin: 36px auto 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+/* ---------- Dentro da sacola ---------- */
+.sacola-pagamento .opcao-titulo {
+  margin-bottom: 8px;
+}
+
+.formas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.forma-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 54px;
+  padding: 8px 4px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  font-size: 0.72rem;
+  line-height: 1.2;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.forma-btn:hover {
+  border-color: var(--cor-dourado);
+}
+
+.forma-btn.selecionado {
+  background: var(--cor-texto);
+  border-color: var(--cor-texto);
+  color: #fff;
+}
+
+.forma-extra {
+  font-size: 0.62rem;
+  letter-spacing: 0.05em;
+  color: var(--cor-dourado-escuro);
+}
+
+.forma-btn.selecionado .forma-extra {
+  color: var(--cor-dourado-claro);
+}
+
+/* Treme quando a cliente tenta finalizar sem escolher */
+.formas.chamar-atencao {
+  animation: tremer 0.45s;
+}
+
+@keyframes tremer {
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.parcelas {
+  width: 100%;
+  margin-top: 8px;
+  padding: 10px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  font: inherit;
+  font-size: 0.85rem;
+  color: var(--cor-texto);
+}
+
+.sacola-valores {
+  display: grid;
+  gap: 4px;
+}
+
+.sacola-linha {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--cor-texto-suave);
+}
+
+.sacola-linha.desconto {
+  color: var(--cor-oliva);
+}
+
+/* Celular */
+@media (max-width: 768px) {
+  .formas-cards {
+    grid-template-columns: 1fr;
+  }
+}

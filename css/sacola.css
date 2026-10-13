@@ -1,0 +1,187 @@
+/* =========================================================
+   SACOLA (carrinho lateral), AVISO RÁPIDO e BOTÃO WHATSAPP
+   ========================================================= */
+
+.sacola-fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+  background: rgba(58, 46, 36, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.sacola-fundo.aberto {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sacola {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 120;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  background: var(--cor-superficie);
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+}
+
+.sacola.aberto {
+  transform: translateX(0);
+}
+
+.sacola-topo {
+  position: relative;
+  padding: 22px 20px;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.sacola-topo h3 {
+  font-size: 1.6rem;
+}
+
+.sacola-itens {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 20px;
+}
+
+.sacola-vazia {
+  text-align: center;
+  color: var(--cor-texto-suave);
+  padding: 50px 0;
+}
+
+.item-sacola {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.item-sacola-img {
+  width: 70px;
+  height: 90px;
+  overflow: hidden;
+  border-radius: var(--raio);
+}
+
+.item-sacola-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-sacola-img .sem-foto {
+  font-size: 2rem;
+}
+
+.item-sacola h4 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+.item-sacola-detalhes {
+  font-size: 0.75rem;
+  color: var(--cor-texto-suave);
+}
+
+.item-sacola-preco {
+  font-size: 0.9rem;
+  color: var(--cor-dourado-escuro);
+  margin-top: 4px;
+}
+
+.item-sacola-acoes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.item-sacola-acoes .quantidade button {
+  width: 28px;
+  height: 28px;
+  font-size: 0.95rem;
+}
+
+.item-sacola-acoes .quantidade span {
+  min-width: 22px;
+  font-size: 0.85rem;
+}
+
+.remover {
+  font-size: 0.7rem;
+  text-decoration: underline;
+  color: var(--cor-texto-suave);
+}
+
+.sacola-rodape {
+  padding: 20px;
+  border-top: 1px solid var(--cor-borda);
+  display: grid;
+  gap: 10px;
+}
+
+.sacola-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.sacola-total strong {
+  color: var(--cor-dourado-escuro);
+  font-size: 1.2rem;
+}
+
+/* Aviso rápido */
+.aviso-rapido {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  z-index: 200;
+  transform: translate(-50%, 20px);
+  padding: 12px 22px;
+  background: var(--cor-texto);
+  color: #fff;
+  border-radius: var(--raio);
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.aviso-rapido.visivel {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* Botão flutuante do WhatsApp */
+.whatsapp-flutuante {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 90;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--cor-whatsapp);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.25s;
+}
+
+.whatsapp-flutuante:hover {
+  transform: scale(1.08);
+}

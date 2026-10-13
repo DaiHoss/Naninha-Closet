@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naninha Closet</title>
+  <meta name="description" content="Naninha Closet - moda feminina com elegância. Escolha suas peças e finalize pelo WhatsApp." />
+
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Estilos (a ordem importa) -->
+  <link rel="stylesheet" href="css/variaveis.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/cabecalho.css" />
+  <link rel="stylesheet" href="css/inicio.css" />
+  <link rel="stylesheet" href="css/secoes.css" />
+  <link rel="stylesheet" href="css/catalogo.css" />
+  <link rel="stylesheet" href="css/modal-produto.css" />
+  <link rel="stylesheet" href="css/sacola.css" />
+  <link rel="stylesheet" href="css/pagamento.css" />
+  <link rel="stylesheet" href="css/trocas.css" />
+  <link rel="stylesheet" href="css/rodape.css" />
+  <link rel="stylesheet" href="css/animacoes.css" />
+</head>
+<body>
+
+  <!-- Barra dourada que mostra o quanto a página já foi rolada -->
+  <div class="barra-progresso" id="barraProgresso"></div>
+
+  <!-- ================= CABEÇALHO ================= -->
+  <header class="cabecalho" id="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a href="#inicio" class="logo" aria-label="Naninha Closet - início">
+        <span class="logo-n">N</span>
+        <span class="logo-texto">
+          <span class="logo-nome">NANINHA</span>
+          <span class="logo-closet">CLOSET</span>
+        </span>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="#inicio">Início</a>
+        <a href="#catalogo">Coleção</a>
+        <a href="#pagamento">Pagamento</a>
+        <a href="#trocas">Trocas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <div class="cabecalho-acoes">
+        <button class="btn-sacola" id="abrirSacola" aria-label="Abrir sacola">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+          <span class="contador-sacola" id="contadorSacola">0</span>
+        </button>
+        <button class="btn-menu" id="btnMenu" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= INÍCIO (topo da página) ================= -->
+  <section class="inicio" id="inicio">
+    <div class="inicio-ripas" aria-hidden="true"></div>
+    <div class="inicio-luz" aria-hidden="true"></div>
+
+    <div class="container inicio-conteudo">
+      <!-- Texto -->
+      <div class="inicio-texto">
+        <p class="inicio-pre entrada" style="--atraso: 0.1s">Nova coleção</p>
+        <h1 class="entrada" style="--atraso: 0.25s">
+          <span id="bannerTitulo">Elegância que</span>
+          <em id="bannerDestaque">veste você</em>
+        </h1>
+        <p class="inicio-sub entrada" style="--atraso: 0.4s" id="bannerSubtitulo">Peças selecionadas com carinho para todos os momentos.</p>
+        <div class="inicio-botoes entrada" style="--atraso: 0.55s">
+          <a href="#catalogo" class="btn btn-dourado">Ver coleção</a>
+          <a href="#" class="btn btn-contorno" id="inicioWhatsapp" target="_blank" rel="noopener">Fale conosco</a>
+        </div>
+        <ul class="inicio-selos entrada" style="--atraso: 0.7s">
+          <li>Peças exclusivas</li>
+          <li>Atendimento personalizado</li>
+          <li>Envio para todo o Brasil</li>
+        </ul>
+      </div>
+
+      <!-- Ilustração: arco iluminado com arara de roupas -->
+      <div class="inicio-visual entrada" style="--atraso: 0.3s">
+        <div class="inicio-movel" data-mouse="12">
+          <div class="arco" data-parallax="-0.08">
+            <svg class="arara" viewBox="0 0 480 600" aria-hidden="true">
+              <defs>
+                <linearGradient id="araraVolume" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#fff" stop-opacity="0.25"/>
+                  <stop offset="0.45" stop-color="#fff" stop-opacity="0"/>
+                  <stop offset="1" stop-color="#000" stop-opacity="0.2"/>
+                </linearGradient>
+              </defs>
+
+              <!-- luz da prateleira e barra da arara -->
+              <rect x="70" y="52" width="340" height="4" rx="2" fill="#f3d9a8"/>
+              <rect x="70" y="56" width="340" height="40" fill="#f3d9a8" opacity="0.18"/>
+              <line x1="40" y1="90" x2="440" y2="90" stroke="#a8814f" stroke-width="5" stroke-linecap="round"/>
+
+              <!-- Peça 1: vestido longo -->
+              <g transform="translate(-16 50) scale(0.42)">
+                <g class="peca" style="--atraso: 0s">
+                  <path d="M300 150v-22a17 17 0 1 0-17-17" fill="none" stroke="#a8814f" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M300 150L175 196h250z" fill="none" stroke="#8a6440" stroke-width="8" stroke-linejoin="round"/>
+                  <path fill="#6B7051" d="M250 172 L300 268 L350 172 L366 182 L372 300 Q362 345 378 385 L432 735 Q380 745 333 740 L318 565 L300 742 Q235 745 168 735 L222 385 Q238 345 228 300 L234 182 Z"/>
+                  <path fill="url(#araraVolume)" d="M250 172 L300 268 L350 172 L366 182 L372 300 Q362 345 378 385 L432 735 Q380 745 333 740 L318 565 L300 742 Q235 745 168 735 L222 385 Q238 345 228 300 L234 182 Z"/>
+                  <path d="M228 300 Q300 318 372 300" fill="none" stroke="#545a3f" stroke-width="5"/>
+                </g>
+              </g>
+
+              <!-- Peça 2: blusa -->
+              <g transform="translate(64 50) scale(0.42)">
+                <g class="peca" style="--atraso: -1.2s">
+                  <path d="M300 150v-22a17 17 0 1 0-17-17" fill="none" stroke="#a8814f" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M300 150L175 196h250z" fill="none" stroke="#8a6440" stroke-width="8" stroke-linejoin="round"/>
+                  <path fill="#E3CFA8" d="M238 182 L272 176 Q300 250 328 176 L362 182 L430 214 Q452 226 462 250 L488 340 L432 360 L400 292 L404 520 Q300 540 196 520 L200 292 L168 360 L112 340 L138 250 Q148 226 170 214 Z"/>
+                  <path fill="url(#araraVolume)" d="M238 182 L272 176 Q300 250 328 176 L362 182 L430 214 Q452 226 462 250 L488 340 L432 360 L400 292 L404 520 Q300 540 196 520 L200 292 L168 360 L112 340 L138 250 Q148 226 170 214 Z"/>
+                  <path d="M272 176 Q300 250 328 176 Q300 200 272 176Z" fill="#c9b189"/>
+                </g>
+              </g>
+
+              <!-- Peça 3: tricot -->
+              <g transform="translate(164 50) scale(0.42)">
+                <g class="peca" style="--atraso: -2.4s">
+                  <path d="M300 150v-22a17 17 0 1 0-17-17" fill="none" stroke="#a8814f" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M300 150L175 196h250z" fill="none" stroke="#8a6440" stroke-width="8" stroke-linejoin="round"/>
+                  <path fill="#A87447" d="M248 178 Q300 206 352 178 L418 198 Q452 212 462 258 L492 476 L450 484 L418 300 L412 474 Q300 490 188 474 L182 300 L150 484 L108 476 L138 258 Q148 212 182 198 Z"/>
+                  <path fill="url(#araraVolume)" d="M248 178 Q300 206 352 178 L418 198 Q452 212 462 258 L492 476 L450 484 L418 300 L412 474 Q300 490 188 474 L182 300 L150 484 L108 476 L138 258 Q148 212 182 198 Z"/>
+                  <path d="M188 450 Q300 466 412 450 L412 474 Q300 490 188 474 Z" fill="#93633a"/>
+                  <path d="M248 178 Q300 206 352 178" fill="none" stroke="#93633a" stroke-width="10" stroke-linecap="round"/>
+                </g>
+              </g>
+
+              <!-- Peça 4: vestido midi -->
+              <g transform="translate(244 50) scale(0.42)">
+                <g class="peca" style="--atraso: -0.6s">
+                  <path d="M300 150v-22a17 17 0 1 0-17-17" fill="none" stroke="#a8814f" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M300 150L175 196h250z" fill="none" stroke="#8a6440" stroke-width="8" stroke-linejoin="round"/>
+                  <path d="M254 178L244 210M346 178L356 210" stroke="#EDE2D0" stroke-width="8" stroke-linecap="round"/>
+                  <path fill="#EDE2D0" d="M240 205 Q300 228 360 205 L372 330 L380 350 L458 650 Q300 685 142 650 L220 350 L228 330 Z"/>
+                  <path fill="url(#araraVolume)" d="M240 205 Q300 228 360 205 L372 330 L380 350 L458 650 Q300 685 142 650 L220 350 L228 330 Z"/>
+                  <path d="M226 330 Q300 345 374 330 L377 352 Q300 367 223 352 Z" fill="#c4ab8a"/>
+                </g>
+              </g>
+
+              <!-- chão -->
+              <ellipse cx="240" cy="560" rx="190" ry="14" fill="#3a2e24" opacity="0.08"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Selo girando -->
+        <div class="selo" data-mouse="-18" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <defs><path id="seloCirculo" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs>
+            <circle cx="100" cy="100" r="96" fill="#fbf7f1" stroke="#d9bf94"/>
+            <g class="selo-texto">
+              <text><textPath href="#seloCirculo" textLength="462">NANINHA CLOSET ✦ MODA FEMININA ✦ </textPath></text>
+            </g>
+            <text x="100" y="124" text-anchor="middle" class="selo-n">N</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ramo de oliveira -->
+    <svg class="ramo" viewBox="0 0 160 300" aria-hidden="true">
+      <path d="M40 300 Q60 200 120 20" fill="none" stroke="#6b5a3e" stroke-width="3"/>
+      <g fill="#6b7051">
+        <ellipse cx="62" cy="240" rx="7" ry="24" transform="rotate(-50 62 240)"/>
+        <ellipse cx="48" cy="210" rx="7" ry="24" transform="rotate(40 48 210)"/>
+        <ellipse cx="80" cy="180" rx="7" ry="24" transform="rotate(-55 80 180)"/>
+        <ellipse cx="66" cy="150" rx="7" ry="24" transform="rotate(35 66 150)"/>
+        <ellipse cx="100" cy="120" rx="6" ry="21" transform="rotate(-55 100 120)"/>
+        <ellipse cx="88" cy="92" rx="6" ry="21" transform="rotate(30 88 92)"/>
+        <ellipse cx="116" cy="62" rx="5" ry="18" transform="rotate(-50 116 62)"/>
+        <ellipse cx="106" cy="40" rx="5" ry="17" transform="rotate(25 106 40)"/>
+      </g>
+      <g fill="#8a8f6c">
+        <ellipse cx="70" cy="226" rx="5" ry="18" transform="rotate(-20 70 226)"/>
+        <ellipse cx="90" cy="164" rx="5" ry="18" transform="rotate(-25 90 164)"/>
+        <ellipse cx="108" cy="104" rx="4" ry="15" transform="rotate(-20 108 104)"/>
+      </g>
+    </svg>
+
+    <a href="#catalogo" class="rolar" aria-label="Rolar para a coleção"><span></span></a>
+  </section>
+
+  <!-- Faixa com texto correndo -->
+  <div class="faixa" aria-hidden="true">
+    <div class="faixa-trilho">
+      <span>Nova coleção</span><span>✦</span><span>Peças exclusivas</span><span>✦</span><span>Atendimento pelo WhatsApp</span><span>✦</span><span>Envio para todo o Brasil</span><span>✦</span>
+      <span>Nova coleção</span><span>✦</span><span>Peças exclusivas</span><span>✦</span><span>Atendimento pelo WhatsApp</span><span>✦</span><span>Envio para todo o Brasil</span><span>✦</span>
+    </div>
+  </div>
+
+  <!-- ================= CATÁLOGO ================= -->
+  <section class="catalogo" id="catalogo">
+    <div class="container">
+      <h2 class="titulo-secao" data-animar="subir">Coleção</h2>
+      <p class="subtitulo-secao" data-animar="subir">Naninha Closet</p>
+
+      <!-- Botões de categoria são criados pelo js/catalogo.js -->
+      <div class="filtros" id="filtros" data-animar="subir"></div>
+
+      <!-- Cards de produto são criados pelo js/catalogo.js -->
+      <div class="grade-produtos" id="gradeProdutos"></div>
+    </div>
+  </section>
+
+  <!-- ================= SOBRE ================= -->
+  <section class="sobre" id="sobre">
+    <div class="container sobre-conteudo">
+      <div class="sobre-imagem" data-animar="esquerda">
+        <img src="img/banner.jpg" alt="Fachada da loja Naninha Closet" loading="lazy" />
+      </div>
+      <div class="sobre-texto" data-animar="direita">
+        <h2>Sobre nós</h2>
+        <p>
+          A Naninha Closet nasceu do amor pela moda e pelo cuidado com cada detalhe.
+          Selecionamos peças que unem conforto, qualidade e elegância, para que você
+          se sinta única em todos os momentos.
+        </p>
+        <ul class="vantagens">
+          <li>Atendimento personalizado pelo WhatsApp</li>
+          <li>Peças selecionadas a dedo</li>
+          <li>Envio para todo o Brasil</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= COMO COMPRAR ================= -->
+  <section class="como-comprar">
+    <div class="container">
+      <h2 class="titulo-secao" data-animar="subir">Como comprar</h2>
+      <p class="subtitulo-secao" data-animar="subir">Simples e rápido</p>
+      <div class="passos">
+        <div class="passo" data-animar="subir" style="--atraso: 0s"><span>1</span><h3>Escolha</h3><p>Selecione o modelo, tamanho e cor da peça.</p></div>
+        <div class="passo" data-animar="subir" style="--atraso: 0.15s"><span>2</span><h3>Adicione</h3><p>Coloque quantas peças quiser na sua sacola.</p></div>
+        <div class="passo" data-animar="subir" style="--atraso: 0.3s"><span>3</span><h3>Finalize</h3><p>Envie o pedido pelo WhatsApp e combine pagamento e entrega.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FORMAS DE PAGAMENTO =================
+       Desconto do Pix e parcelas do crédito: js/config.js -->
+  <section class="pagamento" id="pagamento">
+    <div class="container">
+      <h2 class="titulo-secao" data-animar="subir">Formas de pagamento</h2>
+      <p class="subtitulo-secao" data-animar="subir">Escolha na sua sacola</p>
+
+      <div class="formas-cards">
+        <div class="forma-card" data-animar="subir" style="--atraso: 0s">
+          <div class="forma-icone">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 4L44 24 24 44 4 24z"/><path d="M24 14l10 10-10 10-10-10z"/></svg>
+          </div>
+          <h3>Pix</h3>
+          <p id="textoPix">Pagamento instantâneo e aprovação na hora.</p>
+        </div>
+        <div class="forma-card" data-animar="subir" style="--atraso: 0.15s">
+          <div class="forma-icone">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="40" height="28" rx="4"/><path d="M4 18h40"/><path d="M10 30h10"/></svg>
+          </div>
+          <h3>Cartão de crédito</h3>
+          <p id="textoCredito">Pagamento no cartão de crédito.</p>
+        </div>
+        <div class="forma-card" data-animar="subir" style="--atraso: 0.3s">
+          <div class="forma-icone">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="40" height="28" rx="4"/><path d="M4 18h40"/><path d="M28 30l4 4 8-8"/></svg>
+          </div>
+          <h3>Cartão de débito</h3>
+          <p>Pagamento à vista no cartão de débito.</p>
+        </div>
+      </div>
+
+      <p class="pagamento-nota" data-animar="subir">
+        Escolha a forma de pagamento na sacola. Depois de enviar o pedido pelo WhatsApp,
+        combinamos com você os dados para o pagamento.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= TROCAS =================
+       Texto da política: edite os itens abaixo.
+       Prazo em dias: js/config.js (prazoTrocaDias) -->
+  <section class="trocas" id="trocas">
+    <div class="container">
+      <h2 class="titulo-secao" data-animar="subir">Trocas</h2>
+      <p class="subtitulo-secao" data-animar="subir">Política de trocas</p>
+
+      <div class="trocas-conteudo">
+        <div class="trocas-politica" data-animar="esquerda">
+          <div class="regra">
+            <span class="regra-num">01</span>
+            <div>
+              <h3>Prazo</h3>
+              <p>Você tem até <strong><span data-prazo-troca>7</span> dias</strong> após o recebimento para solicitar a troca.</p>
+            </div>
+          </div>
+          <div class="regra">
+            <span class="regra-num">02</span>
+            <div>
+              <h3>Condições da peça</h3>
+              <p>A peça deve estar sem uso, sem lavagem, sem perfume e com a etiqueta presa.</p>
+            </div>
+          </div>
+          <div class="regra">
+            <span class="regra-num">03</span>
+            <div>
+              <h3>Tamanho, cor ou modelo</h3>
+              <p>A troca pode ser feita por outro tamanho, cor ou modelo, conforme a disponibilidade em estoque.</p>
+            </div>
+          </div>
+          <div class="regra">
+            <span class="regra-num">04</span>
+            <div>
+              <h3>Peça com defeito</h3>
+              <p>Recebeu uma peça com defeito? Envie a solicitação com uma foto do defeito pelo WhatsApp que resolvemos para você.</p>
+            </div>
+          </div>
+          <div class="regra">
+            <span class="regra-num">05</span>
+            <div>
+              <h3>Como solicitar</h3>
+              <p>Preencha o formulário e envie pelo WhatsApp. Responderemos com as orientações para o envio da peça.</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="form-troca" id="formTroca" data-animar="direita">
+          <h3>Solicitar troca</h3>
+
+          <label class="campo">
+            <span>Seu nome *</span>
+            <input type="text" name="nome" required autocomplete="name" />
+          </label>
+
+          <div class="form-linha">
+            <label class="campo">
+              <span>Data da compra</span>
+              <input type="date" name="dataCompra" />
+            </label>
+            <label class="campo">
+              <span>Peça *</span>
+              <select name="peca" id="trocaPeca" required></select>
+            </label>
+          </div>
+
+          <fieldset class="campo">
+            <legend>Motivo da troca *</legend>
+            <div class="motivos">
+              <label class="motivo"><input type="radio" name="motivo" value="Tamanho" /><span>Tamanho</span></label>
+              <label class="motivo"><input type="radio" name="motivo" value="Cor" /><span>Cor</span></label>
+              <label class="motivo"><input type="radio" name="motivo" value="Modelo" /><span>Modelo</span></label>
+              <label class="motivo"><input type="radio" name="motivo" value="Defeito" /><span>Defeito</span></label>
+              <label class="motivo"><input type="radio" name="motivo" value="Outro" /><span>Outro</span></label>
+            </div>
+          </fieldset>
+
+          <label class="campo">
+            <span>O que gostaria de receber?</span>
+            <input type="text" name="desejo" placeholder="Ex.: o mesmo modelo no tamanho G" />
+          </label>
+
+          <label class="campo">
+            <span>Observações</span>
+            <textarea name="observacoes" rows="3"></textarea>
+          </label>
+
+          <button class="btn btn-whatsapp btn-bloco" type="submit">Solicitar troca pelo WhatsApp</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RODAPÉ ================= -->
+  <footer class="rodape" id="contato">
+    <div class="container rodape-conteudo">
+      <div class="rodape-logo" data-animar="zoom">
+        <span class="logo-n">N</span>
+        <span class="logo-nome">NANINHA</span>
+        <span class="logo-closet">CLOSET</span>
+      </div>
+      <div class="rodape-links">
+        <a href="#" id="linkWhatsappRodape" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" id="linkInstagram" target="_blank" rel="noopener">Instagram</a>
+        <a href="#trocas">Trocas</a>
+      </div>
+      <p class="rodape-pagamento">Pagamento: Pix · Cartão de crédito · Cartão de débito</p>
+      <p class="rodape-copy">&copy; <span id="ano"></span> Naninha Closet. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL DO PRODUTO ================= -->
+  <div class="modal-fundo" id="modalProduto" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalNome">
+      <button class="modal-fechar" data-fechar aria-label="Fechar">&times;</button>
+      <div class="modal-imagem" id="modalImagem"></div>
+      <div class="modal-info">
+        <p class="modal-categoria" id="modalCategoria"></p>
+        <h3 class="modal-nome" id="modalNome"></h3>
+        <p class="modal-preco" id="modalPreco"></p>
+        <p class="modal-descricao" id="modalDescricao"></p>
+
+        <div class="opcao" id="grupoModelo">
+          <p class="opcao-titulo">Modelo: <strong id="modeloEscolhido">—</strong></p>
+          <div class="opcoes-lista" id="opcoesModelo"></div>
+        </div>
+
+        <div class="opcao">
+          <p class="opcao-titulo">Tamanho: <strong id="tamanhoEscolhido">—</strong></p>
+          <div class="opcoes-lista" id="opcoesTamanho"></div>
+        </div>
+
+        <div class="opcao">
+          <p class="opcao-titulo">Cor: <strong id="corEscolhida">—</strong></p>
+          <div class="opcoes-lista" id="opcoesCor"></div>
+        </div>
+
+        <div class="opcao">
+          <p class="opcao-titulo">Quantidade</p>
+          <div class="quantidade">
+            <button type="button" id="qtdMenos" aria-label="Diminuir">−</button>
+            <span id="qtdValor">1</span>
+            <button type="button" id="qtdMais" aria-label="Aumentar">+</button>
+          </div>
+        </div>
+
+        <p class="modal-aviso" id="modalAviso"></p>
+
+        <div class="modal-botoes">
+          <button class="btn btn-dourado btn-bloco" id="btnAdicionar">Adicionar à sacola</button>
+          <button class="btn btn-whatsapp btn-bloco" id="btnComprarAgora">Comprar agora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= SACOLA (CARRINHO) ================= -->
+  <div class="sacola-fundo" id="sacolaFundo"></div>
+  <aside class="sacola" id="sacola" aria-label="Sacola de compras">
+    <div class="sacola-topo">
+      <h3>Sua sacola</h3>
+      <button class="modal-fechar" id="fecharSacola" aria-label="Fechar">&times;</button>
+    </div>
+    <div class="sacola-itens" id="sacolaItens"></div>
+    <div class="sacola-rodape">
+      <div class="sacola-pagamento">
+        <p class="opcao-titulo">Forma de pagamento</p>
+        <!-- Botões criados pelo js/pagamento.js -->
+        <div class="formas" id="formasPagamento"></div>
+        <select class="parcelas" id="parcelas" hidden aria-label="Número de parcelas"></select>
+      </div>
+      <div class="sacola-valores">
+        <div class="sacola-linha"><span>Subtotal</span><span id="sacolaSubtotal">R$ 0,00</span></div>
+        <div class="sacola-linha desconto" id="linhaDesconto" hidden><span>Desconto Pix</span><span id="sacolaDesconto"></span></div>
+        <div class="sacola-total">
+          <span>Total</span>
+          <strong id="sacolaTotal">R$ 0,00</strong>
+        </div>
+      </div>
+      <p class="modal-aviso" id="sacolaAviso"></p>
+      <button class="btn btn-whatsapp btn-bloco" id="btnFinalizar">Finalizar pelo WhatsApp</button>
+      <button class="btn btn-contorno btn-bloco" id="btnLimpar">Esvaziar sacola</button>
+    </div>
+  </aside>
+
+  <!-- Aviso rápido (toast) -->
+  <div class="aviso-rapido" id="avisoRapido"></div>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="#" class="whatsapp-flutuante" id="whatsappFlutuante" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor"><path d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.2.6 4.4 1.7 6.3L3 29l7.3-1.9c1.8 1 3.8 1.5 5.8 1.5 7 0 12.7-5.6 12.7-12.6S23 3 16 3zm0 23.1c-1.9 0-3.7-.5-5.3-1.4l-.4-.2-4.3 1.1 1.2-4.2-.3-.4c-1-1.6-1.6-3.5-1.6-5.4C5.3 9.9 10.1 5.2 16 5.2s10.7 4.7 10.7 10.5S21.9 26.1 16 26.1zm5.9-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.6 5.8 5 .8.3 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
+  </a>
+
+  <!-- Scripts (a ordem importa) -->
+  <script src="js/config.js"></script>
+  <script src="js/produtos.js"></script>
+  <script src="js/utilitarios.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script src="js/animacoes.js"></script>
+  <script src="js/pagamento.js"></script>
+  <script src="js/sacola.js"></script>
+  <script src="js/modal-produto.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/trocas.js"></script>
+  <script src="js/principal.js"></script>
+</body>
+</html>

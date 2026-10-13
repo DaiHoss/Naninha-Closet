@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5ede2"/><stop offset="1" stop-color="#e6d6c0"/></linearGradient>
+    <radialGradient id="brilho" cx="0.5" cy="0.3" r="0.6"><stop offset="0" stop-color="#fffaf2" stop-opacity="0.9"/><stop offset="1" stop-color="#fffaf2" stop-opacity="0"/></radialGradient>
+    <linearGradient id="volume" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0.22"/><stop offset="0.45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.2"/></linearGradient>
+    <path id="corpo" d="M250 172 L300 268 L350 172 L366 182 L372 300 Q362 345 378 385 L432 735 Q380 745 333 740 L318 565 L300 742 Q235 745 168 735 L222 385 Q238 345 228 300 L234 182 Z"/>
+  </defs>
+  <rect width="600" height="800" fill="url(#fundo)"/>
+  <path d="M120 800V310a180 180 0 0 1 360 0v490z" fill="#fbf6ee" opacity="0.65"/>
+  <rect width="600" height="800" fill="url(#brilho)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M300 150v-22a17 17 0 1 0-17-17" stroke="#a8814f" stroke-width="5"/>
+    <path d="M300 150L175 196h250z" stroke="#8a6440" stroke-width="7"/>
+  </g>
+  <use href="#corpo" fill="#5a4330" opacity="0.12" transform="translate(10 12)"/>
+  <use href="#corpo" fill="#B5643C"/>
+  <use href="#corpo" fill="url(#volume)"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M228 300 Q300 318 372 300" stroke="#8f4a2a" stroke-width="4"/>
+    <path d="M250 172L300 268L350 172" stroke="#8f4a2a" stroke-width="3"/>
+    <path d="M262 330Q300 350 338 330M256 350Q300 372 344 350" stroke="#3a2e24" stroke-opacity="0.15" stroke-width="2.5"/>
+    <path d="M260 400Q240 560 214 734M300 330V500M340 400Q356 520 372 736" stroke="#3a2e24" stroke-opacity="0.13" stroke-width="2.5"/>
+    <path d="M318 565L333 740" stroke="#8f4a2a" stroke-width="3"/>
+  </g>
+</svg>

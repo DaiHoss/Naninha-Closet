@@ -1,0 +1,194 @@
+/* =========================================================
+   CABEÇALHO (logo, menu, sacola)
+   ========================================================= */
+
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(246, 239, 229, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--cor-borda);
+  transition: box-shadow 0.3s, background 0.3s;
+}
+
+/* Quando a página é rolada, o cabeçalho fica mais baixo e com sombra */
+.cabecalho.rolado {
+  background: rgba(251, 247, 241, 0.97);
+  box-shadow: 0 6px 24px rgba(58, 46, 36, 0.08);
+}
+
+.cabecalho.rolado .cabecalho-conteudo {
+  height: 62px;
+}
+
+.cabecalho.rolado .logo-n {
+  font-size: 2.1rem;
+}
+
+.cabecalho-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  transition: height 0.3s;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-n {
+  font-family: var(--fonte-titulo);
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--cor-dourado);
+  text-shadow: var(--brilho);
+  transition: font-size 0.3s;
+}
+
+.logo-texto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-nome {
+  font-family: var(--fonte-titulo);
+  font-size: 1.35rem;
+  letter-spacing: 0.18em;
+  color: var(--cor-texto);
+}
+
+.logo-closet {
+  font-size: 0.6rem;
+  letter-spacing: 0.55em;
+  color: var(--cor-texto-suave);
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu a {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  position: relative;
+  padding: 4px 0;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--cor-dourado);
+  transition: width 0.3s;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* Ações */
+.cabecalho-acoes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-sacola {
+  position: relative;
+  padding: 8px;
+  color: var(--cor-texto);
+  transition: color 0.25s, transform 0.25s;
+}
+
+.btn-sacola:hover {
+  color: var(--cor-dourado);
+  transform: translateY(-2px);
+}
+
+/* Sacola "pula" quando uma peça é adicionada */
+.btn-sacola.pulou {
+  animation: sacola-pular 0.6s ease;
+}
+
+@keyframes sacola-pular {
+  30% { transform: scale(1.25) rotate(-8deg); }
+  60% { transform: scale(0.95) rotate(4deg); }
+}
+
+.contador-sacola {
+  position: absolute;
+  top: 0;
+  right: -2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: var(--cor-dourado);
+  color: #fff;
+  font-size: 0.65rem;
+  display: grid;
+  place-items: center;
+}
+
+.btn-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.btn-menu span {
+  width: 22px;
+  height: 1.5px;
+  background: var(--cor-texto);
+}
+
+/* Celular */
+@media (max-width: 768px) {
+  .btn-menu {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background: var(--cor-fundo);
+    border-bottom: 1px solid var(--cor-borda);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+  }
+
+  .menu.aberto {
+    max-height: 420px;
+  }
+
+  .menu a {
+    padding: 16px 0;
+  }
+
+  .logo-n {
+    font-size: 2.2rem;
+  }
+
+  .logo-nome {
+    font-size: 1.15rem;
+  }
+}

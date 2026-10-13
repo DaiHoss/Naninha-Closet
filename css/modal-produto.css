@@ -1,0 +1,201 @@
+/* =========================================================
+   JANELA DO PRODUTO (escolha de modelo, tamanho e cor)
+   ========================================================= */
+
+.modal-fundo {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(58, 46, 36, 0.55);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-fundo.aberto {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 920px;
+  max-height: 92vh;
+  overflow-y: auto;
+  background: var(--cor-superficie);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  transform: translateY(30px) scale(0.97);
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.modal-fundo.aberto .modal {
+  transform: none;
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  z-index: 2;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--cor-texto);
+}
+
+.modal-imagem {
+  min-height: 420px;
+  background: var(--cor-fundo-alt);
+}
+
+.modal-imagem img,
+.modal-imagem .sem-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info {
+  padding: 36px 32px;
+}
+
+.modal-categoria {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--cor-texto-suave);
+}
+
+.modal-nome {
+  font-size: 2rem;
+  margin: 4px 0 8px;
+}
+
+.modal-preco {
+  font-size: 1.2rem;
+  color: var(--cor-dourado-escuro);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.modal-descricao {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+/* Opções */
+.opcao {
+  margin-bottom: 18px;
+}
+
+.opcao-titulo {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.opcao-titulo strong {
+  font-weight: 500;
+  color: var(--cor-dourado-escuro);
+}
+
+.opcoes-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.opcao-btn {
+  min-width: 46px;
+  padding: 8px 14px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.opcao-btn:hover {
+  border-color: var(--cor-dourado);
+}
+
+.opcao-btn.selecionado {
+  background: var(--cor-texto);
+  border-color: var(--cor-texto);
+  color: #fff;
+}
+
+/* Bolinhas de cor */
+.cor-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--cor-borda);
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  transition: outline-color 0.2s, transform 0.2s;
+}
+
+.cor-btn:hover {
+  transform: scale(1.12);
+}
+
+.cor-btn.selecionado {
+  outline-color: var(--cor-dourado);
+}
+
+/* Quantidade */
+.quantidade {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+}
+
+.quantidade button {
+  width: 38px;
+  height: 38px;
+  font-size: 1.1rem;
+}
+
+.quantidade span {
+  min-width: 32px;
+  text-align: center;
+}
+
+.modal-aviso {
+  min-height: 1.4em;
+  font-size: 0.8rem;
+  color: #a0473a;
+  margin-bottom: 6px;
+}
+
+.modal-botoes {
+  display: grid;
+  gap: 10px;
+}
+
+/* Celular */
+@media (max-width: 768px) {
+  /* No celular: foto em cima, opções embaixo, rolando juntas */
+  .modal {
+    display: block;
+  }
+
+  .modal-imagem {
+    min-height: 0;
+    height: 45vh;
+  }
+
+  .modal-info {
+    padding: 24px 20px;
+  }
+}

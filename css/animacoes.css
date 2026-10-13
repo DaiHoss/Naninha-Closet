@@ -1,0 +1,134 @@
+/* =========================================================
+   ANIMAÇÕES
+   - Entrada do topo ao abrir a página (.entrada)
+   - Aparecer ao rolar a página ([data-animar])
+       valores: subir | esquerda | direita | zoom
+   - Barra de progresso e efeitos de brilho
+   Para desligar o efeito de um elemento, basta apagar
+   o atributo data-animar dele no index.html.
+   ========================================================= */
+
+/* ---------- Entrada do topo ---------- */
+.entrada {
+  animation: entrar 1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: var(--atraso, 0s);
+}
+
+@keyframes entrar {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+/* ---------- Aparecer ao rolar ----------
+   Só esconde os elementos se o js/animacoes.js estiver ativo
+   (classe .com-animacao no <html>) */
+.com-animacao [data-animar] {
+  opacity: 0;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--atraso, 0s);
+}
+
+.com-animacao [data-animar="subir"] { transform: translateY(40px); }
+.com-animacao [data-animar="esquerda"] { transform: translateX(-60px); }
+.com-animacao [data-animar="direita"] { transform: translateX(60px); }
+.com-animacao [data-animar="zoom"] { transform: scale(0.85); }
+
+.com-animacao [data-animar].visivel {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Barra de progresso ---------- */
+.barra-progresso {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 3px;
+  background: linear-gradient(90deg, var(--cor-dourado-claro), var(--cor-dourado));
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* ---------- Brilho que passa pelos botões ---------- */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.6s;
+}
+
+.btn:hover::after {
+  left: 125%;
+}
+
+/* ---------- Animações contínuas ---------- */
+@keyframes balancar {
+  0%, 100% { transform: rotate(-1.6deg); }
+  50% { transform: rotate(1.6deg); }
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes ramo-vento {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes luz-pulsar {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+@keyframes rolar-ponto {
+  0% { opacity: 0; transform: translateY(0); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(14px); }
+}
+
+@keyframes pulso-whatsapp {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  100% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+}
+
+@keyframes brilho-logo {
+  0%, 100% { text-shadow: 0 0 10px rgba(217, 191, 148, 0.4); }
+  50% { text-shadow: 0 0 24px rgba(217, 191, 148, 0.95); }
+}
+
+.whatsapp-flutuante {
+  animation: pulso-whatsapp 2.2s ease-out infinite;
+}
+
+.logo:hover .logo-n {
+  animation: brilho-logo 1.6s ease-in-out infinite;
+}
+
+/* ---------- Quem prefere menos movimento ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

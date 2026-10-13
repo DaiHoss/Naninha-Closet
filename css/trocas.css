@@ -1,0 +1,172 @@
+/* =========================================================
+   TROCAS (política + formulário)
+   ========================================================= */
+
+.trocas {
+  padding: 90px 0;
+  overflow: hidden;
+}
+
+.trocas-conteudo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 50px;
+  align-items: start;
+}
+
+/* ---------- Política ---------- */
+.regra {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--cor-borda);
+  transition: padding-left 0.3s;
+}
+
+.regra:first-child {
+  padding-top: 0;
+}
+
+.regra:hover {
+  padding-left: 10px;
+}
+
+.regra-num {
+  font-family: var(--fonte-titulo);
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--cor-dourado);
+  min-width: 40px;
+  transition: transform 0.3s;
+}
+
+.regra:hover .regra-num {
+  transform: scale(1.2);
+}
+
+.regra h3 {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.regra p {
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+}
+
+.regra strong {
+  color: var(--cor-dourado-escuro);
+  font-weight: 500;
+}
+
+/* ---------- Formulário ---------- */
+.form-troca {
+  display: grid;
+  gap: 16px;
+  padding: 36px 32px;
+  background: var(--cor-superficie);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.form-troca h3 {
+  font-size: 1.6rem;
+  margin-bottom: 4px;
+}
+
+.form-linha {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.campo {
+  display: grid;
+  gap: 6px;
+  border: none;
+  min-width: 0;
+}
+
+.campo > span,
+.campo legend {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-fundo);
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--cor-texto);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: var(--cor-dourado);
+  box-shadow: 0 0 0 3px rgba(168, 129, 79, 0.15);
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+/* Botões de motivo (rádio estilizado) */
+.motivos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.motivo input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.motivo span {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 30px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.motivo span:hover {
+  border-color: var(--cor-dourado);
+}
+
+.motivo input:checked + span {
+  background: var(--cor-texto);
+  border-color: var(--cor-texto);
+  color: #fff;
+}
+
+.motivo input:focus-visible + span {
+  outline: 2px solid var(--cor-dourado);
+  outline-offset: 2px;
+}
+
+/* Celular */
+@media (max-width: 768px) {
+  .trocas-conteudo,
+  .form-linha {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form-troca {
+    padding: 28px 20px;
+  }
+}

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800">
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5ede2"/><stop offset="1" stop-color="#e6d6c0"/></linearGradient>
+    <radialGradient id="brilho" cx="0.5" cy="0.3" r="0.6"><stop offset="0" stop-color="#fffaf2" stop-opacity="0.9"/><stop offset="1" stop-color="#fffaf2" stop-opacity="0"/></radialGradient>
+    <linearGradient id="volume" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0.22"/><stop offset="0.45" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.18"/></linearGradient>
+    <pattern id="tricot" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M0 0L7 7L14 0M0 7L7 14L14 7" fill="none" stroke="#000" stroke-opacity="0.09" stroke-width="1.5"/></pattern>
+    <path id="calca" d="M215 430 H385 L440 720 H325 L300 520 L275 720 H160 Z"/>
+    <path id="corpo" d="M248 178 Q300 206 352 178 L418 198 Q452 212 462 258 L492 476 L450 484 L418 300 L412 474 Q300 490 188 474 L182 300 L150 484 L108 476 L138 258 Q148 212 182 198 Z"/>
+  </defs>
+  <rect width="600" height="800" fill="url(#fundo)"/>
+  <path d="M120 800V310a180 180 0 0 1 360 0v490z" fill="#fbf6ee" opacity="0.65"/>
+  <rect width="600" height="800" fill="url(#brilho)"/>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M300 150v-22a17 17 0 1 0-17-17" stroke="#a8814f" stroke-width="5"/>
+    <path d="M300 150L175 196h250z" stroke="#8a6440" stroke-width="7"/>
+  </g>
+  <use href="#calca" fill="#5a4330" opacity="0.1" transform="translate(10 12)"/>
+  <use href="#calca" fill="#96653b"/>
+  <use href="#calca" fill="url(#tricot)"/>
+  <use href="#calca" fill="url(#volume)"/>
+  <path d="M300 520V700" stroke="#3a2e24" stroke-opacity="0.15" stroke-width="2.5"/>
+  <use href="#corpo" fill="#5a4330" opacity="0.12" transform="translate(10 12)"/>
+  <use href="#corpo" fill="#A87447"/>
+  <use href="#corpo" fill="url(#tricot)"/>
+  <use href="#corpo" fill="url(#volume)"/>
+  <g fill="#93633a">
+    <path d="M188 450 Q300 466 412 450 L412 474 Q300 490 188 474 Z"/>
+    <path d="M108 476L150 484L153 460L111 453Z"/>
+    <path d="M492 476L450 484L447 460L489 453Z"/>
+  </g>
+  <path d="M248 178 Q300 206 352 178" fill="none" stroke="#93633a" stroke-width="9" stroke-linecap="round"/>
+  <g fill="none" stroke="#3a2e24" stroke-opacity="0.12" stroke-width="2.5"><path d="M182 300L176 236M418 300L424 236"/><path d="M265 220V450M335 220V450"/></g>
+</svg>

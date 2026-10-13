@@ -1,0 +1,44 @@
+/* =========================================================
+   PALETA DE CORES E FONTES
+   Mude as cores do site inteiro só por aqui.
+   ========================================================= */
+
+:root {
+  /* Fundos (tons de parede/creme) */
+  --cor-fundo: #f6efe5;
+  --cor-fundo-alt: #ece0cf;
+  --cor-superficie: #fbf7f1;
+
+  /* Dourado / bronze (letreiro) */
+  --cor-dourado: #a8814f;
+  --cor-dourado-escuro: #876439;
+  --cor-dourado-claro: #d9bf94;
+
+  /* Textos (marrom escuro) */
+  --cor-texto: #3a2e24;
+  --cor-texto-suave: #7a6a5a;
+
+  /* Madeira e oliva (detalhes) */
+  --cor-madeira: #7a5536;
+  --cor-oliva: #6b7051;
+
+  /* Textura do fundo (arquivo em img/). Para tirar: none */
+  --textura: url("../img/textura-fundo.svg");
+
+  /* Bordas */
+  --cor-borda: #dccdb8;
+
+  /* WhatsApp */
+  --cor-whatsapp: #25d366;
+  --cor-whatsapp-escuro: #1da851;
+
+  /* Fontes */
+  --fonte-titulo: "Bodoni Moda", Georgia, serif;
+  --fonte-texto: "Montserrat", Arial, sans-serif;
+
+  /* Medidas */
+  --raio: 4px;
+  --largura-max: 1200px;
+  --sombra: 0 10px 30px rgba(58, 46, 36, 0.12);
+  --brilho: 0 0 18px rgba(217, 191, 148, 0.55);
+}

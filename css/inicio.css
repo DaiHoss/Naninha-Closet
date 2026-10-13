@@ -1,0 +1,276 @@
+/* =========================================================
+   INÍCIO (topo da página)
+   Arco iluminado com arara de roupas, selo girando e
+   ramo de oliveira — inspirado na fachada da loja.
+   ========================================================= */
+
+.inicio {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  padding: 60px 0 90px;
+  overflow: hidden;
+  background:
+    var(--textura),
+    radial-gradient(ellipse at 75% 40%, rgba(255, 244, 222, 0.95) 0%, rgba(255, 244, 222, 0) 55%),
+    linear-gradient(180deg, var(--cor-fundo) 0%, var(--cor-fundo-alt) 100%);
+}
+
+/* Ripas de madeira iluminadas na lateral (como na foto) */
+.inicio-ripas {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 70px;
+  background: repeating-linear-gradient(90deg, #8a6440 0 10px, #6e4d30 10px 12px, #9a7149 12px 22px, #6e4d30 22px 24px);
+  box-shadow: 6px 0 30px rgba(243, 217, 168, 0.9);
+}
+
+.inicio-ripas::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -3px;
+  width: 3px;
+  background: #f3d9a8;
+  box-shadow: 0 0 18px 4px rgba(243, 217, 168, 0.8);
+  animation: luz-pulsar 4s ease-in-out infinite;
+}
+
+.inicio-luz {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 85%, rgba(168, 129, 79, 0.12), transparent 40%);
+  pointer-events: none;
+}
+
+.inicio-conteudo {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  padding-left: 100px;
+}
+
+/* ---------- Texto ---------- */
+.inicio-pre {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.75rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--cor-dourado-escuro);
+  margin-bottom: 18px;
+}
+
+.inicio-pre::before {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: var(--cor-dourado);
+}
+
+.inicio h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+
+.inicio h1 span {
+  display: block;
+}
+
+.inicio h1 em {
+  display: block;
+  font-style: italic;
+  color: var(--cor-dourado);
+  text-shadow: var(--brilho);
+}
+
+.inicio-sub {
+  max-width: 420px;
+  color: var(--cor-texto-suave);
+  margin-bottom: 34px;
+}
+
+.inicio-botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.inicio-selos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  list-style: none;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cor-texto-suave);
+}
+
+.inicio-selos li::before {
+  content: "✦ ";
+  color: var(--cor-dourado);
+}
+
+/* ---------- Ilustração ---------- */
+.inicio-visual {
+  position: relative;
+  max-width: 440px;
+  width: 100%;
+  justify-self: center;
+}
+
+.inicio-movel {
+  transition: translate 0.4s ease-out;
+}
+
+.arco {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 999px 999px var(--raio) var(--raio);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 8%, rgba(255, 236, 200, 0.95), transparent 60%),
+    linear-gradient(180deg, #efe2cd 0%, #dfcbaf 100%);
+  box-shadow:
+    inset 0 0 40px rgba(122, 85, 54, 0.25),
+    0 0 0 10px var(--cor-superficie),
+    0 0 0 11px var(--cor-borda),
+    0 30px 60px rgba(58, 46, 36, 0.18);
+}
+
+.arara {
+  position: absolute;
+  inset: 8% 0 0 0;
+  width: 100%;
+  height: 92%;
+}
+
+/* Roupas balançando no cabide */
+.peca {
+  transform-box: fill-box;
+  transform-origin: 50% 0;
+  animation: balancar 6s ease-in-out infinite;
+  animation-delay: var(--atraso, 0s);
+}
+
+.arco:hover .peca {
+  animation-duration: 2.5s;
+}
+
+/* Selo redondo girando */
+.selo {
+  position: absolute;
+  left: -50px;
+  bottom: 40px;
+  width: 130px;
+  height: 130px;
+  filter: drop-shadow(0 10px 20px rgba(58, 46, 36, 0.18));
+  transition: translate 0.4s ease-out;
+}
+
+.selo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.selo-texto {
+  transform-origin: 100px 100px;
+  animation: girar 18s linear infinite;
+}
+
+.selo-texto text {
+  font-family: var(--fonte-texto);
+  font-size: 14px;
+  letter-spacing: 2px;
+  fill: var(--cor-texto);
+}
+
+.selo-n {
+  font-family: var(--fonte-titulo);
+  font-size: 72px;
+  fill: var(--cor-dourado);
+}
+
+/* Ramo de oliveira */
+.ramo {
+  position: absolute;
+  left: 60px;
+  bottom: -10px;
+  width: 130px;
+  transform-origin: 25% 100%;
+  animation: ramo-vento 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Indicador "role para baixo" */
+.rolar {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  width: 26px;
+  height: 42px;
+  margin-left: -13px;
+  border: 1px solid var(--cor-dourado);
+  border-radius: 14px;
+}
+
+.rolar span {
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  width: 4px;
+  height: 8px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: var(--cor-dourado);
+  animation: rolar-ponto 1.8s ease-in-out infinite;
+}
+
+/* ---------- Celular e tablet ---------- */
+@media (max-width: 900px) {
+  .inicio-conteudo {
+    grid-template-columns: minmax(0, 1fr);
+    padding-left: 16px;
+    text-align: center;
+  }
+
+  .inicio-pre,
+  .inicio-botoes,
+  .inicio-selos {
+    justify-content: center;
+  }
+
+  .inicio-sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .inicio-visual {
+    max-width: 320px;
+  }
+
+  .inicio-ripas {
+    width: 18px;
+  }
+
+  .selo {
+    left: -24px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .ramo {
+    left: 10px;
+    width: 80px;
+  }
+}

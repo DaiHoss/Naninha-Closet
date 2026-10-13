@@ -1,0 +1,64 @@
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+
+.rodape {
+  background: var(--cor-texto);
+  color: var(--cor-fundo-alt);
+  padding: 60px 0 30px;
+  text-align: center;
+}
+
+.rodape-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.rodape-logo .logo-n {
+  font-size: 3.4rem;
+  color: var(--cor-dourado-claro);
+}
+
+.rodape-logo .logo-nome {
+  color: var(--cor-fundo);
+  font-size: 1.6rem;
+}
+
+.rodape-logo .logo-closet {
+  color: var(--cor-dourado-claro);
+  font-size: 0.65rem;
+}
+
+.rodape-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.rodape-links a {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transition: color 0.25s;
+}
+
+.rodape-links a:hover {
+  color: var(--cor-dourado-claro);
+}
+
+.rodape-copy {
+  font-size: 0.75rem;
+  color: var(--cor-texto-suave);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 20px;
+}
+
+.rodape-pagamento {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--cor-dourado-claro);
+  margin-bottom: 24px;
+}
