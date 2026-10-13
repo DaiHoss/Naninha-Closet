@@ -8,7 +8,7 @@ const CONFIG = {
   nomeLoja: "Naninha Closet",
 
   // Número do WhatsApp com DDI + DDD, só números (ex.: 55 11 999998888)
-  whatsapp: "5511999999999",
+  whatsapp: "5511959877353",
 
   // Instagram (deixe "" para esconder)
   instagram: "https://instagram.com/naninhacloset",
