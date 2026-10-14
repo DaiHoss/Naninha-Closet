@@ -65,6 +65,18 @@ Dica: crie uma pasta por produto dentro de `img/produtos/` e use nomes sem espa�
 As imagens de exemplo são ilustrações .svg — basta trocar pelo caminho da foto real (.jpg/.png/.webp).
 Se a foto não for encontrada, o site mostra a inicial do nome no lugar.
 
+## Versão dos arquivos (evita site "quebrado" depois de atualizar)
+O navegador guarda os arquivos do site por alguns minutos. Para ele baixar a versão nova
+logo após uma atualização, o `index.html` usa um número no fim dos arquivos CSS e JS
+(ex.: `css/inicio.css?v=2`).
+
+**Quando alterar algum arquivo dentro de `css/` ou `js/`**, troque esse número em todos
+(ex.: de `?v=2` para `?v=3`). No VS Code: **Ctrl + H** → procurar `?v=2` → substituir
+por `?v=3` → **Substituir tudo**.
+
+Isso vale também para `js/produtos.js` e `js/config.js` (preços, produtos, WhatsApp).
+Fotos novas e o próprio `index.html` não precisam disso.
+
 ## Publicar no GitHub Pages
 1. Crie um repositório no GitHub e envie todos os arquivos desta pasta.
 2. No repositório: **Settings → Pages → Branch: main / (root) → Save**.

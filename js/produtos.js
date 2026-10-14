@@ -44,7 +44,7 @@ const PRODUTOS = [
     id: "blusa-poliamida-uv",
     nome: "Blusa de Poliamida com Proteção UV",
     categoria: "Blusas",
-    preco: 59.9,
+    preco: 59.99,
     imagem: "img/produtos/blusa-uv/capa-todas-as-cores.jpg",
     descricao:
       "Blusa de poliamida com proteção UV, gola alta e zíper frontal. Tem recortes que valorizam a silhueta, laterais em tela, bolsos laterais e abertura para o polegar nos punhos.",
