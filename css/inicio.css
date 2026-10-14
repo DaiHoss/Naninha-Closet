@@ -1,7 +1,7 @@
 /* =========================================================
    INÍCIO (topo da página)
-   Arco iluminado com arara de roupas, selo girando e
-   ramo de oliveira — inspirado na fachada da loja.
+   Imagem do logo, selo girando e ramo de flores
+   — nas cores rosa e dourado do logo.
    ========================================================= */
 
 .inicio {
@@ -13,7 +13,7 @@
   overflow: hidden;
   background:
     var(--textura),
-    radial-gradient(ellipse at 75% 40%, rgba(255, 244, 222, 0.95) 0%, rgba(255, 244, 222, 0) 55%),
+    radial-gradient(ellipse at 75% 40%, rgba(255, 238, 230, 0.95) 0%, rgba(255, 238, 230, 0) 55%),
     linear-gradient(180deg, var(--cor-fundo) 0%, var(--cor-fundo-alt) 100%);
 }
 
@@ -24,7 +24,7 @@
   bottom: 0;
   left: 0;
   width: 70px;
-  background: repeating-linear-gradient(90deg, #8a6440 0 10px, #6e4d30 10px 12px, #9a7149 12px 22px, #6e4d30 22px 24px);
+  background: repeating-linear-gradient(90deg, #dba893 0 10px, #c28d78 10px 12px, #e6b8a3 12px 22px, #c28d78 22px 24px);
   box-shadow: 6px 0 30px rgba(243, 217, 168, 0.9);
 }
 
@@ -133,48 +133,60 @@
   transition: translate 0.4s ease-out;
 }
 
-.arco {
+/* Moldura em arco da imagem do topo */
+.moldura {
   position: relative;
   aspect-ratio: 4 / 5;
   border-radius: 999px 999px var(--raio) var(--raio);
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at 50% 8%, rgba(255, 236, 200, 0.95), transparent 60%),
-    linear-gradient(180deg, #efe2cd 0%, #dfcbaf 100%);
   box-shadow:
-    inset 0 0 40px rgba(122, 85, 54, 0.25),
+    inset 0 0 40px rgba(74, 46, 40, 0.2),
     0 0 0 10px var(--cor-superficie),
     0 0 0 11px var(--cor-borda),
-    0 30px 60px rgba(58, 46, 36, 0.18);
+    0 30px 60px rgba(74, 46, 40, 0.18);
 }
 
-.arara {
-  position: absolute;
-  inset: 8% 0 0 0;
+.moldura img {
   width: 100%;
-  height: 92%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 45% center; /* mantém o logo no centro e as flores à esquerda */
+  transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1), filter 1.2s;
 }
 
-/* Roupas balançando no cabide */
-.peca {
-  transform-box: fill-box;
-  transform-origin: 50% 0;
-  animation: balancar 6s ease-in-out infinite;
-  animation-delay: var(--atraso, 0s);
+/* Ao passar o mouse: aproxima de leve e ilumina */
+.moldura:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.06);
 }
 
-.arco:hover .peca {
-  animation-duration: 2.5s;
+/* Brilho dourado que atravessa a imagem de tempos em tempos */
+.moldura::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(105deg, transparent, rgba(255, 236, 200, 0.35), transparent);
+  transform: skewX(-15deg);
+  animation: moldura-brilho 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes moldura-brilho {
+  0%, 70% { left: -60%; }
+  100% { left: 130%; }
 }
 
 /* Selo redondo girando */
 .selo {
   position: absolute;
-  left: -50px;
-  bottom: 40px;
+  right: -50px;
+  bottom: -40px;
   width: 130px;
   height: 130px;
-  filter: drop-shadow(0 10px 20px rgba(58, 46, 36, 0.18));
+  filter: drop-shadow(0 10px 20px rgba(74, 46, 40, 0.18));
   transition: translate 0.4s ease-out;
 }
 
@@ -264,7 +276,8 @@
   }
 
   .selo {
-    left: -24px;
+    right: -14px;
+    bottom: -30px;
     width: 100px;
     height: 100px;
   }

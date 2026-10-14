@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   padding: 16px;
-  background: rgba(58, 46, 36, 0.55);
+  background: rgba(74, 46, 40, 0.55);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
@@ -55,11 +55,116 @@
   background: var(--cor-fundo-alt);
 }
 
-.modal-imagem img,
-.modal-imagem .sem-foto {
+/* ---------- Galeria de fotos ---------- */
+.modal-imagem {
+  position: relative;
+  overflow: hidden;
+}
+
+.foto-principal {
+  position: absolute;
+  inset: 0;
+}
+
+/* Quando há miniaturas, a foto termina acima delas */
+.modal-imagem:has(.miniaturas) .foto-principal {
+  bottom: 88px;
+}
+
+/* Foto inteira, sem cortar */
+.foto-principal img,
+.foto-principal .sem-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: foto-entrar 0.45s ease;
+}
+
+@keyframes foto-entrar {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+}
+
+/* Setas para passar as fotos */
+.seta-foto {
+  position: absolute;
+  top: calc(50% - 44px);
+  z-index: 2;
+  width: 42px;
+  height: 42px;
+  margin-top: -21px;
+  border-radius: 50%;
+  background: rgba(255, 248, 245, 0.85);
+  color: var(--cor-texto);
+  font-size: 1.8rem;
+  line-height: 1;
+  padding-bottom: 4px;
+  box-shadow: 0 4px 14px rgba(74, 46, 40, 0.15);
+  transition: background 0.25s, color 0.25s, transform 0.25s;
+}
+
+.seta-foto.anterior {
+  left: 12px;
+}
+
+.seta-foto.proxima {
+  right: 12px;
+}
+
+.seta-foto:hover {
+  background: var(--cor-dourado);
+  color: #fff;
+}
+
+.seta-foto.anterior:hover {
+  transform: translateX(-3px);
+}
+
+.seta-foto.proxima:hover {
+  transform: translateX(3px);
+}
+
+.miniaturas {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  gap: 8px;
+  padding: 6px;
+  overflow-x: auto;
+  background: rgba(255, 248, 245, 0.88);
+  backdrop-filter: blur(6px);
+  border-radius: var(--raio);
+  scrollbar-width: thin;
+}
+
+.miniatura {
+  flex: 0 0 48px;
+  height: 64px;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  opacity: 0.65;
+  transition: opacity 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.miniatura img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.miniatura:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.miniatura.ativa {
+  opacity: 1;
+  border-color: var(--cor-dourado);
 }
 
 .modal-info {
@@ -192,7 +297,7 @@
 
   .modal-imagem {
     min-height: 0;
-    height: 45vh;
+    height: 52vh;
   }
 
   .modal-info {

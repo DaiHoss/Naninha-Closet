@@ -48,7 +48,7 @@
   align-items: center;
 }
 
-/* Foto em formato de arco, mostrando a imagem inteira */
+/* Imagem redonda (selo do logo) com contorno dourado */
 .sobre-imagem {
   position: relative;
   width: 100%;
@@ -59,10 +59,10 @@
 .sobre-imagem::before {
   content: "";
   position: absolute;
-  inset: -14px 14px 14px -14px;
+  inset: -16px;
   border: 1px solid var(--cor-dourado);
-  border-radius: 999px 999px var(--raio) var(--raio);
-  transition: inset 0.5s;
+  border-radius: 50%;
+  transition: inset 0.5s, opacity 0.5s;
 }
 
 .sobre-imagem img {
@@ -70,12 +70,23 @@
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 999px 999px var(--raio) var(--raio);
+  border-radius: 50%;
   box-shadow: var(--sombra);
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.sobre-imagem:hover img {
+  transform: scale(1.03) rotate(-2deg);
 }
 
 .sobre-imagem:hover::before {
-  inset: -22px 22px 22px -22px;
+  inset: -26px;
+  opacity: 0.6;
+}
+
+.vantagens strong {
+  font-weight: 500;
+  color: var(--cor-dourado-escuro);
 }
 
 .sobre-texto h2 {
@@ -103,7 +114,7 @@
   content: "";
   position: absolute;
   left: 0;
-  top: 50%;
+  top: 22px; /* alinhado à primeira linha do texto */
   width: 14px;
   height: 1px;
   background: var(--cor-dourado);

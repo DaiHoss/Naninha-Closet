@@ -78,11 +78,6 @@
 }
 
 /* ---------- Animações contínuas ---------- */
-@keyframes balancar {
-  0%, 100% { transform: rotate(-1.6deg); }
-  50% { transform: rotate(1.6deg); }
-}
-
 @keyframes girar {
   to { transform: rotate(360deg); }
 }

@@ -20,9 +20,16 @@ function buscarProduto(id) {
   return PRODUTOS.find((p) => p.id === id);
 }
 
+// Foto do produto na cor escolhida (se a cor tiver foto própria)
+function imagemDaCor(produto, nomeCor) {
+  const cor = produto.cores.find((c) => c.nome === nomeCor);
+  return (cor && cor.imagem) || produto.imagem;
+}
+
 // Gera a <img> do produto. Se a foto não existir, mostra a inicial do nome.
-function htmlImagemProduto(produto) {
-  return `<img src="${escaparHtml(produto.imagem)}" alt="${escaparHtml(produto.nome)}" loading="lazy" data-inicial="${escaparHtml(produto.nome.charAt(0))}">`;
+function htmlImagemProduto(produto, nomeCor) {
+  const src = imagemDaCor(produto, nomeCor);
+  return `<img src="${escaparHtml(src)}" alt="${escaparHtml(produto.nome)}" loading="lazy" data-inicial="${escaparHtml(produto.nome.charAt(0))}">`;
 }
 
 document.addEventListener(

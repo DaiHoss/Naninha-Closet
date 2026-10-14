@@ -15,6 +15,9 @@
    - modelos:   (opcional) variações de modelo. Apague a linha se não tiver
    - tamanhos:  lista de tamanhos disponíveis
    - cores:     lista com nome e código da cor (hex)
+                (opcional) imagem: foto da peça naquela cor — aparece
+                quando a cliente escolhe a cor
+   - fotos:     (opcional) fotos extras, como detalhes da peça
    - destaque:  true para mostrar a etiqueta "Novidade"
    ========================================================= */
 
@@ -38,20 +41,23 @@ const PRODUTOS = [
     destaque: true,
   },
   {
-    id: "blusa-seda",
-    nome: "Blusa Cetim Acetinada",
+    id: "blusa-poliamida-uv",
+    nome: "Blusa de Poliamida com Proteção UV",
     categoria: "Blusas",
     preco: 119.9,
-    imagem: "img/produtos/blusa-seda.svg",
-    descricao: "Blusa em cetim com caimento fluido, perfeita para o dia a dia ou ocasiões especiais.",
-    modelos: ["Gola V", "Gola redonda"],
+    imagem: "img/produtos/blusa-uv/capa-todas-as-cores.jpg",
+    descricao:
+      "Blusa de poliamida com proteção UV, gola alta e zíper frontal. Tem recortes que valorizam a silhueta, laterais em tela, bolsos laterais e abertura para o polegar nos punhos.",
     tamanhos: ["P", "M", "G"],
     cores: [
-      { nome: "Champagne", hex: "#E3CFA8" },
-      { nome: "Preto", hex: "#1F1B18" },
-      { nome: "Caramelo", hex: "#A87447" },
+      { nome: "Preto", hex: "#1F1F21", imagem: "img/produtos/blusa-uv/preto.jpg" },
+      { nome: "Branco", hex: "#F4F3F0", imagem: "img/produtos/blusa-uv/branco.jpg" },
+      { nome: "Nude", hex: "#DCC6AE", imagem: "img/produtos/blusa-uv/nude.jpg" },
+      { nome: "Rosa", hex: "#E4AEB1", imagem: "img/produtos/blusa-uv/rosa.jpg" },
+      { nome: "Cinza azulado", hex: "#7F8EA3", imagem: "img/produtos/blusa-uv/cinza-azulado.jpg" },
     ],
-    destaque: false,
+    fotos: ["img/produtos/blusa-uv/detalhe-gola.jpg", "img/produtos/blusa-uv/detalhe-punho.jpg"],
+    destaque: true,
   },
   {
     id: "calca-pantalona",

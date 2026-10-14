@@ -4,21 +4,25 @@
    ========================================================= */
 
 :root {
-  /* Fundos (tons de parede/creme) */
-  --cor-fundo: #f6efe5;
-  --cor-fundo-alt: #ece0cf;
-  --cor-superficie: #fbf7f1;
+  /* Fundos (rosa claro, tirado da parede do logo) */
+  --cor-fundo: #f9eae3;
+  --cor-fundo-alt: #f2d9cd;
+  --cor-superficie: #fff8f5;
 
-  /* Dourado / bronze (letreiro) */
-  --cor-dourado: #a8814f;
-  --cor-dourado-escuro: #876439;
-  --cor-dourado-claro: #d9bf94;
+  /* Rosa do logo (detalhes) */
+  --cor-rosa: #e4b092;
+  --cor-rosa-escuro: #cc9c84;
 
-  /* Textos (marrom escuro) */
-  --cor-texto: #3a2e24;
-  --cor-texto-suave: #7a6a5a;
+  /* Dourado (letras do logo) */
+  --cor-dourado: #b5844f;
+  --cor-dourado-escuro: #8e6236;
+  --cor-dourado-claro: #e2bf92;
 
-  /* Madeira e oliva (detalhes) */
+  /* Textos (marrom rosado) */
+  --cor-texto: #4a2e28;
+  --cor-texto-suave: #8c6a62;
+
+  /* Detalhes */
   --cor-madeira: #7a5536;
   --cor-oliva: #6b7051;
 
@@ -26,7 +30,7 @@
   --textura: url("../img/textura-fundo.svg");
 
   /* Bordas */
-  --cor-borda: #dccdb8;
+  --cor-borda: #ebcfc3;
 
   /* WhatsApp */
   --cor-whatsapp: #25d366;
@@ -39,6 +43,6 @@
   /* Medidas */
   --raio: 4px;
   --largura-max: 1200px;
-  --sombra: 0 10px 30px rgba(58, 46, 36, 0.12);
-  --brilho: 0 0 18px rgba(217, 191, 148, 0.55);
+  --sombra: 0 10px 30px rgba(74, 46, 40, 0.12);
+  --brilho: 0 0 18px rgba(226, 191, 146, 0.55);
 }

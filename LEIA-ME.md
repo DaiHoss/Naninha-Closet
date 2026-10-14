@@ -53,6 +53,14 @@ e finaliza o pedido pelo WhatsApp. Funciona no GitHub Pages (não precisa de ser
 2. Abra `js/produtos.js`, copie um bloco `{ ... },` e altere os dados.
 3. O `id` precisa ser único. A `categoria` precisa existir na lista `CATEGORIAS`.
 
+### Fotos por cor e galeria
+Veja o exemplo da "Blusa de Poliamida com Proteção UV" em `js/produtos.js` (fotos em `img/produtos/blusa-uv/`):
+- `imagem`: foto de capa (aparece no catálogo).
+- Em cada cor, `imagem`: foto da peça naquela cor — troca sozinha quando a cliente escolhe a cor.
+- `fotos`: fotos extras (detalhes), que aparecem nas miniaturas.
+
+Dica: crie uma pasta por produto dentro de `img/produtos/` e use nomes sem espaços nem acentos (ex.: `cinza-azulado.jpg`).
+
 As imagens de exemplo são ilustrações .svg — basta trocar pelo caminho da foto real (.jpg/.png/.webp).
 Se a foto não for encontrada, o site mostra a inicial do nome no lugar.
 

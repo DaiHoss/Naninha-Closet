@@ -139,7 +139,7 @@ const Sacola = {
         const detalhes = [item.modelo, `Tam. ${item.tamanho}`, item.cor].filter(Boolean).map(escaparHtml).join(" · ");
         return `
           <div class="item-sacola">
-            <div class="item-sacola-img">${htmlImagemProduto(produto)}</div>
+            <div class="item-sacola-img">${htmlImagemProduto(produto, item.cor)}</div>
             <div>
               <h4>${escaparHtml(produto.nome)}</h4>
               <p class="item-sacola-detalhes">${detalhes}</p>

@@ -6,7 +6,7 @@
   position: fixed;
   inset: 0;
   z-index: 110;
-  background: rgba(58, 46, 36, 0.45);
+  background: rgba(74, 46, 40, 0.45);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
