@@ -123,9 +123,10 @@ const Sacola = {
     document.getElementById("sacolaDesconto").textContent = `- ${formatarPreco(resumo.desconto)}`;
     document.getElementById("linhaDesconto").hidden = resumo.desconto <= 0;
     document.getElementById("sacolaTotal").textContent = formatarPreco(resumo.total);
+    document.getElementById("rotuloTotal").textContent = resumo.temJuros ? "Total sem juros" : "Total";
     document.getElementById("sacolaAviso").textContent = "";
     document.getElementById("btnFinalizar").disabled = !this.itens.length;
-    Pagamento.atualizarTela(resumo.subtotal);
+    Pagamento.atualizarTela();
 
     const lista = document.getElementById("sacolaItens");
     if (!this.itens.length) {

@@ -102,23 +102,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  margin-bottom: 40px;
-}
-
-.inicio-selos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 24px;
-  list-style: none;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--cor-texto-suave);
-}
-
-.inicio-selos li::before {
-  content: "✦ ";
-  color: var(--cor-dourado);
 }
 
 /* ---------- Ilustração ---------- */
@@ -213,15 +196,15 @@
   fill: var(--cor-dourado);
 }
 
-/* Ramo de oliveira */
+/* Arranjo de flores em vaso dourado, ao pé do arco */
 .ramo {
   position: absolute;
-  left: 60px;
-  bottom: -10px;
-  width: 130px;
-  transform-origin: 25% 100%;
-  animation: ramo-vento 7s ease-in-out infinite;
+  z-index: 2;
+  left: -120px;
+  bottom: -14px;
+  width: 160px;
   pointer-events: none;
+  filter: drop-shadow(0 10px 18px rgba(74, 46, 40, 0.12));
 }
 
 /* Indicador "role para baixo" */
@@ -257,8 +240,7 @@
   }
 
   .inicio-pre,
-  .inicio-botoes,
-  .inicio-selos {
+  .inicio-botoes {
     justify-content: center;
   }
 
@@ -283,7 +265,8 @@
   }
 
   .ramo {
-    left: 10px;
-    width: 80px;
+    left: -18px;
+    bottom: -12px;
+    width: 92px;
   }
 }

@@ -10,12 +10,13 @@ e finaliza o pedido pelo WhatsApp. Funciona no GitHub Pages (não precisa de ser
 | Número do WhatsApp, Instagram, textos do topo | `js/config.js`         |
 | Produtos, preços, tamanhos, cores, categorias | `js/produtos.js`       |
 | Fotos dos produtos                          | pasta `img/produtos/`    |
-| Foto da seção "Sobre nós"                   | `img/banner.jpg`         |
-| Ilustração do topo (arara, selo, ramo)      | `index.html` (seção INÍCIO) + `css/inicio.css` |
+| Imagem do topo (logo em arco)               | `img/inicio-logo.jpg` |
+| Vaso de flores ao lado do arco              | `img/flores.svg` (posição em `css/inicio.css`, classe `.ramo`) |
+| Imagem do "Sobre nós"                       | `img/sobre-logo.jpg` |
 | Cores e fontes do site inteiro              | `css/variaveis.css`      |
 | Textura do fundo (trocar, enfraquecer ou tirar) | `img/textura-fundo.svg` e `--textura` em `css/variaveis.css` |
 | Texto das mensagens (pedido e troca) no WhatsApp | `js/whatsapp.js`    |
-| Desconto do Pix, parcelas, parcela mínima   | `js/config.js`           |
+| Desconto do Pix e aviso de juros do cartão   | `js/config.js`           |
 | Prazo de troca (dias)                       | `js/config.js`           |
 | Texto da política de trocas                 | `index.html` (seção TROCAS) |
 | Textos "Sobre nós" e "Como comprar"         | `index.html`             |
@@ -41,7 +42,7 @@ e finaliza o pedido pelo WhatsApp. Funciona no GitHub Pages (não precisa de ser
 - `utilitarios.js` – funções de apoio
 - `whatsapp.js` – monta a mensagem do pedido
 - `animacoes.js` – aparecer ao rolar, parallax, cabeçalho que encolhe
-- `pagamento.js` – formas de pagamento, desconto Pix e parcelas
+- `pagamento.js` – formas de pagamento, desconto Pix e aviso de juros do crédito
 - `sacola.js` – carrinho
 - `modal-produto.js` – janela do produto
 - `catalogo.js` – lista de produtos e filtros

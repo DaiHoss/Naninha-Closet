@@ -31,7 +31,10 @@ function montarMensagemPedido(itens, pagamento) {
     linhas.push(`Subtotal: ${formatarPreco(pagamento.subtotal)}`);
     linhas.push(`Desconto Pix: - ${formatarPreco(pagamento.desconto)}`);
   }
-  linhas.push(`*Total: ${formatarPreco(pagamento.total)}*`);
+  linhas.push(`*${pagamento.temJuros ? "Total sem juros" : "Total"}: ${formatarPreco(pagamento.total)}*`);
+  if (pagamento.temJuros) {
+    linhas.push("_No cartão de crédito há acréscimo de juros. Aguardo o valor final._");
+  }
   linhas.push("");
   linhas.push("Aguardo o retorno para combinar o pagamento e a entrega. Obrigada!");
 

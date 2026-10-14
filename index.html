@@ -80,11 +80,6 @@
           <a href="#catalogo" class="btn btn-dourado">Ver coleção</a>
           <a href="#" class="btn btn-contorno" id="inicioWhatsapp" target="_blank" rel="noopener">Fale conosco</a>
         </div>
-        <ul class="inicio-selos entrada" style="--atraso: 0.7s">
-          <li>Peças exclusivas</li>
-          <li>Atendimento personalizado</li>
-          <li>Envio para São Paulo/Capital</li>
-        </ul>
       </div>
 
       <!-- Imagem do topo (para trocar, substitua o arquivo img/inicio-logo.jpg) -->
@@ -94,6 +89,9 @@
             <img src="img/inicio-logo.jpg" alt="Logo da Naninha Closet" />
           </div>
         </div>
+
+        <!-- Arranjo de flores em vaso dourado, ao pé do arco (arquivo: img/flores.svg) -->
+        <img class="ramo" src="img/flores.svg" alt="" aria-hidden="true" />
 
         <!-- Selo girando -->
         <div class="selo" data-mouse="-18" aria-hidden="true">
@@ -109,25 +107,6 @@
       </div>
     </div>
 
-    <!-- Ramo de flores (cores rosadas) -->
-    <svg class="ramo" viewBox="0 0 160 300" aria-hidden="true">
-      <path d="M40 300 Q60 200 120 20" fill="none" stroke="#b0806a" stroke-width="3"/>
-      <g fill="#d39c87">
-        <ellipse cx="62" cy="240" rx="7" ry="24" transform="rotate(-50 62 240)"/>
-        <ellipse cx="48" cy="210" rx="7" ry="24" transform="rotate(40 48 210)"/>
-        <ellipse cx="80" cy="180" rx="7" ry="24" transform="rotate(-55 80 180)"/>
-        <ellipse cx="66" cy="150" rx="7" ry="24" transform="rotate(35 66 150)"/>
-        <ellipse cx="100" cy="120" rx="6" ry="21" transform="rotate(-55 100 120)"/>
-        <ellipse cx="88" cy="92" rx="6" ry="21" transform="rotate(30 88 92)"/>
-        <ellipse cx="116" cy="62" rx="5" ry="18" transform="rotate(-50 116 62)"/>
-        <ellipse cx="106" cy="40" rx="5" ry="17" transform="rotate(25 106 40)"/>
-      </g>
-      <g fill="#edc3b1">
-        <ellipse cx="70" cy="226" rx="5" ry="18" transform="rotate(-20 70 226)"/>
-        <ellipse cx="90" cy="164" rx="5" ry="18" transform="rotate(-25 90 164)"/>
-        <ellipse cx="108" cy="104" rx="4" ry="15" transform="rotate(-20 108 104)"/>
-      </g>
-    </svg>
 
     <a href="#catalogo" class="rolar" aria-label="Rolar para a coleção"><span></span></a>
   </section>
@@ -196,7 +175,7 @@
   </section>
 
   <!-- ================= FORMAS DE PAGAMENTO =================
-       Desconto do Pix e parcelas do crédito: js/config.js -->
+       Desconto do Pix e aviso de juros do crédito: js/config.js -->
   <section class="pagamento" id="pagamento">
     <div class="container">
       <h2 class="titulo-secao" data-animar="subir">Formas de pagamento</h2>
@@ -215,7 +194,7 @@
             <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="40" height="28" rx="4"/><path d="M4 18h40"/><path d="M10 30h10"/></svg>
           </div>
           <h3>Cartão de crédito</h3>
-          <p id="textoCredito">Pagamento no cartão de crédito.</p>
+          <p id="textoCredito">Pagamento com acréscimo de juros da maquininha.</p>
         </div>
         <div class="forma-card" data-animar="subir" style="--atraso: 0.3s">
           <div class="forma-icone">
@@ -402,13 +381,13 @@
         <p class="opcao-titulo">Forma de pagamento</p>
         <!-- Botões criados pelo js/pagamento.js -->
         <div class="formas" id="formasPagamento"></div>
-        <select class="parcelas" id="parcelas" hidden aria-label="Número de parcelas"></select>
+        <p class="aviso-credito" id="avisoCredito" hidden></p>
       </div>
       <div class="sacola-valores">
         <div class="sacola-linha"><span>Subtotal</span><span id="sacolaSubtotal">R$ 0,00</span></div>
         <div class="sacola-linha desconto" id="linhaDesconto" hidden><span>Desconto Pix</span><span id="sacolaDesconto"></span></div>
         <div class="sacola-total">
-          <span>Total</span>
+          <span id="rotuloTotal">Total</span>
           <strong id="sacolaTotal">R$ 0,00</strong>
         </div>
       </div>

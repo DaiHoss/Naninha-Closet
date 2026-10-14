@@ -146,16 +146,17 @@
   40%, 80% { transform: translateX(6px); }
 }
 
-.parcelas {
-  width: 100%;
+/* Aviso de juros ao escolher cartão de crédito */
+.aviso-credito {
   margin-top: 8px;
-  padding: 10px;
-  border: 1px solid var(--cor-borda);
+  padding: 10px 12px;
+  border-left: 3px solid var(--cor-dourado);
+  background: var(--cor-fundo);
   border-radius: var(--raio);
-  background: var(--cor-superficie);
-  font: inherit;
-  font-size: 0.85rem;
-  color: var(--cor-texto);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--cor-texto-suave);
+  animation: entrar 0.4s ease both;
 }
 
 .sacola-valores {

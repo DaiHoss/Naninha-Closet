@@ -23,8 +23,8 @@ const CONFIG = {
 
   // ---------- Pagamento ----------
   descontoPix: 5, // % de desconto no Pix (coloque 0 para não ter desconto)
-  parcelasSemJuros: 3, // máximo de parcelas sem juros no cartão de crédito
-  valorMinimoParcela: 30, // valor mínimo de cada parcela, em reais
+  // Aviso que aparece no cartão de crédito (seção de pagamento e sacola)
+  avisoJurosCredito: "Pagamento com acréscimo de juros da maquininha. O valor final é informado no WhatsApp.",
 
   // ---------- Trocas ----------
   prazoTrocaDias: 7, // dias para solicitar a troca após receber a peça
