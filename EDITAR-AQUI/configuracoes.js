@@ -1,16 +1,21 @@
 /* =========================================================
    CONFIGURAÇÕES DA LOJA
-   Altere aqui o número do WhatsApp, nome, redes sociais etc.
+   Altere aqui o número do WhatsApp, Instagram, textos do topo,
+   desconto do Pix e prazo de trocas.
+
+   Cuidado ao editar:
+   - Textos ficam entre aspas: "assim"
+   - Cada linha termina com vírgula ,
    ========================================================= */
 
-const CONFIG = {
+var CONFIG = {
   // Nome que aparece no site e na mensagem do WhatsApp
   nomeLoja: "Naninha Closet",
 
   // Número do WhatsApp com DDI + DDD, só números (ex.: 55 11 999998888)
   whatsapp: "5511959877353",
 
-  // Instagram (deixe "" para esconder)
+  // Instagram (precisa começar com https://). Deixe "" para esconder
   instagram: "https://instagram.com/naninhacloset",
 
   // Texto do topo da página inicial

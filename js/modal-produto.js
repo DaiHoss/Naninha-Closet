@@ -97,6 +97,9 @@ const ModalProduto = {
       )
       .join("");
 
+    document.getElementById("btnAdicionar").disabled = produto.esgotado;
+    document.getElementById("btnComprarAgora").disabled = produto.esgotado;
+
     this.atualizarTela();
     this.fundo.classList.add("aberto");
     this.fundo.setAttribute("aria-hidden", "false");
@@ -170,7 +173,7 @@ const ModalProduto = {
   },
 
   alterarQuantidade(delta) {
-    this.escolha.quantidade = Math.max(1, this.escolha.quantidade + delta);
+    this.escolha.quantidade = Math.min(Sacola.quantidadeMaxima, Math.max(1, this.escolha.quantidade + delta));
     this.atualizarTela();
   },
 
@@ -181,7 +184,7 @@ const ModalProduto = {
     document.getElementById("tamanhoEscolhido").textContent = tamanho || "—";
     document.getElementById("corEscolhida").textContent = cor || "—";
     document.getElementById("qtdValor").textContent = quantidade;
-    document.getElementById("modalAviso").textContent = "";
+    document.getElementById("modalAviso").textContent = this.produto.esgotado ? "Peça esgotada no momento." : "";
 
     this.fundo.querySelectorAll("[data-campo]").forEach((botao) => {
       botao.classList.toggle("selecionado", this.escolha[botao.dataset.campo] === botao.dataset.valor);
@@ -190,6 +193,7 @@ const ModalProduto = {
 
   // Confere se tudo foi escolhido; mostra aviso se faltar algo
   validar() {
+    if (this.produto.esgotado) return false;
     const faltando = [];
     if (this.produto.modelos?.length && !this.escolha.modelo) faltando.push("o modelo");
     if (!this.escolha.tamanho) faltando.push("o tamanho");

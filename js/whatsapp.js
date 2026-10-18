@@ -41,8 +41,13 @@ function montarMensagemPedido(itens, pagamento) {
   return linhas.join("\n");
 }
 
+// Abre o WhatsApp em outra aba sem dar acesso a esta página (noopener)
+function abrirWhatsapp(mensagem) {
+  window.open(linkWhatsapp(mensagem), "_blank", "noopener");
+}
+
 function enviarPedidoWhatsapp(itens, pagamento) {
-  window.open(linkWhatsapp(montarMensagemPedido(itens, pagamento)), "_blank");
+  abrirWhatsapp(montarMensagemPedido(itens, pagamento));
 }
 
 // dados: campos do formulário de troca

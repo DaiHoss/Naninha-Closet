@@ -6,13 +6,33 @@
 
 const Sacola = {
   chaveArmazenamento: "naninha-sacola",
+  quantidadeMaxima: 20, // por item
   itens: [],
+
+  // Só aceita itens que existem no catálogo, com opções válidas
+  // (descarta produtos removidos/esgotados e dados alterados)
+  itemValido(i) {
+    const produto = i && buscarProduto(i.id);
+    if (!produto || produto.esgotado) return false;
+    if (!Number.isInteger(i.quantidade) || i.quantidade < 1) return false;
+    if (!produto.tamanhos.includes(i.tamanho)) return false;
+    if (!produto.cores.some((c) => c.nome === i.cor)) return false;
+    if (produto.modelos.length ? !produto.modelos.includes(i.modelo) : i.modelo) return false;
+    return true;
+  },
 
   iniciar() {
     try {
       const salvo = JSON.parse(localStorage.getItem(this.chaveArmazenamento));
-      // descarta itens de produtos que foram removidos do catálogo
-      this.itens = Array.isArray(salvo) ? salvo.filter((i) => buscarProduto(i.id)) : [];
+      this.itens = Array.isArray(salvo)
+        ? salvo.filter((i) => this.itemValido(i)).map((i) => ({
+            id: i.id,
+            modelo: i.modelo || null,
+            tamanho: i.tamanho,
+            cor: i.cor,
+            quantidade: Math.min(i.quantidade, this.quantidadeMaxima),
+          }))
+        : [];
     } catch {
       this.itens = [];
     }
@@ -50,7 +70,7 @@ const Sacola = {
       (i) => i.id === novo.id && i.modelo === novo.modelo && i.tamanho === novo.tamanho && i.cor === novo.cor
     );
     if (existente) {
-      existente.quantidade += novo.quantidade;
+      existente.quantidade = Math.min(existente.quantidade + novo.quantidade, this.quantidadeMaxima);
     } else {
       this.itens.push({ ...novo });
     }
@@ -65,7 +85,7 @@ const Sacola = {
   alterarQuantidade(indice, delta) {
     const item = this.itens[indice];
     if (!item) return;
-    item.quantidade += delta;
+    item.quantidade = Math.min(item.quantidade + delta, this.quantidadeMaxima);
     if (item.quantidade < 1) {
       this.remover(indice);
       return;

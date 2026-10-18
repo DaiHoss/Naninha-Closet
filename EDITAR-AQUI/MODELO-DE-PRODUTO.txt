@@ -1,0 +1,32 @@
+COPIE O BLOCO ABAIXO (do { até o },) E COLE NO FINAL DA LISTA
+EM produtos.js, LOGO ANTES DO  ];
+
+Depois troque as informações. Apague as linhas "modelos" e "fotos"
+se o produto não tiver.
+
+  {
+    id: "nome-do-produto-sem-espacos",
+    nome: "Nome do Produto",
+    categoria: "Blusas",
+    preco: 99.90,
+    imagem: "pasta-do-produto/capa.jpg",
+    descricao: "Descrição curta da peça.",
+    modelos: ["Modelo 1", "Modelo 2"],
+    tamanhos: ["P", "M", "G"],
+    cores: [
+      { nome: "Preto", hex: "#1F1F21", imagem: "pasta-do-produto/preto.jpg" },
+      { nome: "Branco", hex: "#F4F3F0", imagem: "pasta-do-produto/branco.jpg" },
+    ],
+    fotos: ["pasta-do-produto/detalhe.jpg"],
+    destaque: true,
+  },
+
+
+LEMBRETES
+- id: único, só letras minúsculas, números e traço (ex.: "vestido-floral-02")
+- categoria: igual a uma da lista CATEGORIAS (Vestidos, Blusas, Calças, Saias, Conjuntos)
+- preco: com PONTO, sem "R$" (ex.: 129.90)
+- imagem: as fotos ficam em EDITAR-AQUI/fotos-produtos/ — escreva só o
+  caminho a partir dessa pasta (ex.: "vestido-floral/capa.jpg")
+- hex: código da cor. Para descobrir, pesquise "seletor de cores" no Google
+- Peça acabou? Coloque  esgotado: true,  em vez de apagar

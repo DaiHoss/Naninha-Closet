@@ -16,6 +16,11 @@ function escaparHtml(texto) {
     .replace(/"/g, "&quot;");
 }
 
+// Escapa o texto e transforma **assim** em negrito (usado no textos.js)
+function textoComNegrito(texto) {
+  return escaparHtml(texto).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+}
+
 function buscarProduto(id) {
   return PRODUTOS.find((p) => p.id === id);
 }

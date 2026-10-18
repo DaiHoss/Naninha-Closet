@@ -152,3 +152,35 @@ h3 {
 [hidden] {
   display: none !important;
 }
+
+/* Caixa de avisos do js/verificar.js (só aparece quando o site
+   é aberto no próprio computador) */
+.avisos-dono {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  width: min(640px, calc(100% - 32px));
+  max-height: 60vh;
+  overflow: auto;
+  padding: 16px 20px;
+  background: #fff1f0;
+  color: #8a1c12;
+  border: 2px solid #d9473a;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.avisos-dono ul {
+  margin: 8px 0 12px 18px;
+}
+
+.avisos-dono button {
+  padding: 6px 14px;
+  border: 1px solid #d9473a;
+  background: #fff;
+  color: #8a1c12;
+  cursor: pointer;
+}

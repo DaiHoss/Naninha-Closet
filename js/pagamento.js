@@ -2,7 +2,7 @@
    FORMAS DE PAGAMENTO
    - Opções que a cliente escolhe na sacola
    - Desconto no Pix e aviso de juros no cartão de crédito
-   Os textos e o desconto ficam no js/config.js
+   Os textos e o desconto ficam no EDITAR-AQUI/configuracoes.js
    ========================================================= */
 
 const FORMAS_PAGAMENTO = {

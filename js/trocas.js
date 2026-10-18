@@ -1,17 +1,12 @@
 /* =========================================================
    TROCAS - formulário que envia a solicitação pelo WhatsApp
-   O texto da política de trocas fica no index.html
-   (seção TROCAS) e o prazo no js/config.js
+   O texto da política de trocas fica no EDITAR-AQUI/textos.js
+   e o prazo no EDITAR-AQUI/configuracoes.js
    ========================================================= */
 
 const Trocas = {
   iniciar() {
     const form = document.getElementById("formTroca");
-
-    // Prazo vindo do config.js
-    document.querySelectorAll("[data-prazo-troca]").forEach((el) => {
-      el.textContent = CONFIG.prazoTrocaDias;
-    });
 
     // Lista de peças vinda do catálogo
     const seletor = document.getElementById("trocaPeca");
@@ -22,12 +17,20 @@ const Trocas = {
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const dados = Object.fromEntries(new FormData(form));
+      // Tira espaços sobrando e limita o tamanho de cada campo
+      const dados = {};
+      new FormData(form).forEach((valor, campo) => {
+        dados[campo] = String(valor).trim().slice(0, 500);
+      });
+      if (!dados.nome) {
+        mostrarAviso("Escreva o seu nome.");
+        return;
+      }
       if (!dados.motivo) {
         mostrarAviso("Escolha o motivo da troca.");
         return;
       }
-      window.open(linkWhatsapp(montarMensagemTroca(dados)), "_blank");
+      abrirWhatsapp(montarMensagemTroca(dados));
     });
   },
 };

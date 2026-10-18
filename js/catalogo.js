@@ -1,6 +1,6 @@
 /* =========================================================
    CATÁLOGO - cria os filtros e os cards de produto
-   Os produtos vêm do arquivo js/produtos.js
+   Os produtos vêm do arquivo EDITAR-AQUI/produtos.js
    ========================================================= */
 
 const Catalogo = {
@@ -60,7 +60,7 @@ const Catalogo = {
         <article class="card" data-produto="${escaparHtml(p.id)}" tabindex="0">
           <div class="card-imagem">
             ${htmlImagemProduto(p)}
-            ${p.destaque ? `<span class="etiqueta">Novidade</span>` : ""}
+            ${p.esgotado ? `<span class="etiqueta esgotado">Esgotado</span>` : p.destaque ? `<span class="etiqueta">Novidade</span>` : ""}
             <span class="card-acao">Escolher opções</span>
           </div>
           <div class="card-info">

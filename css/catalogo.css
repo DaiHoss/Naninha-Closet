@@ -188,3 +188,9 @@
   text-align: center;
   color: var(--cor-texto-suave);
 }
+
+/* Produto com  esgotado: true  (EDITAR-AQUI/produtos.js) */
+.etiqueta.esgotado {
+  background: var(--cor-texto);
+  color: var(--cor-superficie);
+}
